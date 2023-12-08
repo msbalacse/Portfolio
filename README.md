@@ -1,3 +1,4 @@
-## TypeScript || ReactJS
+## Porfoli
 
-**The Game has started ✨**
+> React +
+> TypeScript
