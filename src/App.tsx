@@ -1,11 +1,7 @@
 import './App.css';
 
 function App() {
-  return (
-    <>
-      <div>msbala</div>
-    </>
-  );
+  return <>msbala</>;
 }
 
 export default App;
