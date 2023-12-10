@@ -4,5 +4,10 @@
 
 :root {
   font-family: 'Cabin', sans-serif;
-  text-transform: uppercase;
+}
+
+@layer base {
+  body {
+    @apply h-screen bg-gradient-to-r from-fuchsia-600 to-purple-600;
+  }
 }

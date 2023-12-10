@@ -5,10 +5,3 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Ubuntu', sans-serif;
 font-family: 'Yantramanav', sans-serif; */
-
-#root {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
