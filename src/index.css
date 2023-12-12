@@ -8,6 +8,6 @@
 
 @layer base {
   body {
-    @apply h-screen bg-gradient-to-r from-fuchsia-600 to-purple-600;
+    @apply h-screen bg-gradient-to-t from-zinc-900 to-pink-900;
   }
 }
