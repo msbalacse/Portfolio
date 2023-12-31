@@ -1,4 +1,3 @@
-## Porfoli
-
+## Portfolio
 > React +
 > TypeScript
