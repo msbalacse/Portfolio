@@ -1,6 +1,6 @@
 import './App.css';
 import ProfileDetail from './Components/ProfileDetail.tsx';
-import ThemeProvider from './contexts/theme.tsx';
+import { ThemeProvider } from './contexts/theme.tsx';
 import { Container, Paragraph } from './styles/styles.tsx';
 
 function App() {

@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
-import { useThemeContext } from '../contexts/theme';
+import { Theme, useThemeContext } from '../contexts/theme';
+
+type theme = 'light' | 'dark';
 
 const ProfileDetail = () => {
+  const [curretTheme, setTheme] = useState<Theme>();
+
   const Theme = useThemeContext();
 
   // console.log(Theme.mode);
 
   const handleChangeTheme = () => {
     Theme.changeTheme({ mode: 'dark' });
-    console.log(Theme.mode);
   };
 
   return (

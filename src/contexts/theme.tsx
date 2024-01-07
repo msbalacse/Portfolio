@@ -1,54 +1,35 @@
-import { ReactNode, createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-type Theme = {
-  mode: 'light' | 'dark' | 'system';
+type Theme = 'light' | 'dark';
+
+type ThemeContextType = {
+  theme: Theme;
+  toggleTheme: () => void;
 };
 
-export type ThemeContextValue = Theme & {
-  changeTheme: (theme: Theme) => void;
-};
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-type ThemeContextProviderProps = {
-  children: ReactNode;
-};
-
-const initialState: Theme = {
-  mode: 'light',
-};
-
-type ChangeMode = {
-  type: 'CHANGE_MODE';
-  payload: Theme;
-};
-
-function themeReducer(state: Theme, action: ChangeMode): Theme {
-  if (action.type === 'CHANGE_MODE') {
-    return { mode: action.payload.mode };
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
   }
+  return context;
+};
 
-  return state;
-}
+export const ThemeProvider: React.FC = ({ children }) => {
+  const [theme, setTheme] = useState<Theme>('light');
 
-export const ThemeContext = createContext<ThemeContextValue | null>(null);
-
-export function useThemeContext() {
-  const ThemeMode = useContext(ThemeContext);
-  if (ThemeMode === null) {
-    throw new Error(`Test is null`);
-  }
-
-  return ThemeMode;
-}
-
-export default function ThemeProvider({ children }: ThemeContextProviderProps) {
-  const [themestate, dispatch] = useReducer(themeReducer, initialState);
-
-  const ctx: ThemeContextValue = {
-    mode: themestate.mode,
-    changeTheme(theme) {
-      dispatch({ type: 'CHANGE_MODE', payload: theme });
-    },
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  return <ThemeContext.Provider value={ctx}>{children}</ThemeContext.Provider>;
-}
+  const value: ThemeContextType = {
+    theme,
+    toggleTheme,
+  };
+
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
+};
