@@ -9,9 +9,4 @@ const Container = styled.div`
   line-height: 5cqb;
 `;
 
-const Paragraph = styled.p`
-  line-height: 5cqb;
-  padding: 2rem;
-`;
-
-export { Container, Paragraph };
+export { Container };
