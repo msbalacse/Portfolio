@@ -9,9 +9,6 @@ function App() {
   return (
     <main className={classes.main}>
       <ProfileDetail />
-      <div className={'text-black font-Inter font-semibold text-[18px]'}>
-        Balamurugan
-      </div>
       <Paragraph>
         Hello there! 👋 I'm Balamurugan, a highly skilled front-end developer
         specializing in React. 🚀 I come from Madurai, India. 🇮🇳 I have a
