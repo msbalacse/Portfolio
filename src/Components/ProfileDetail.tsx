@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
 import gsap from 'gsap';
 import Container from './styled/Container';
-import Paragraph from './styled/Paragraph';
-
 const ProfileDetail = () => {
   const nameRef = useRef(null);
 
@@ -19,11 +17,11 @@ const ProfileDetail = () => {
 
   return (
     <Container>
-      <div className="flex gap-4 p-4">
+      <div className="flex flex-wrap gap-4 p-4">
         <img src={ProfilePic} className="w-[250px]" alt="profile picture" />
         <div>
           <p
-            className="h-40 font-bold text-9xl"
+            className="text-6xl font-bold min-h-40 md:text-9xl"
             style={{
               color: 'transparent',
               backgroundImage:
@@ -34,16 +32,15 @@ const ProfileDetail = () => {
           >
             Bala Murugan
           </p>
-          <p className="px-2 text-2xl font-extrabold text-white">
+          <p className="px-2 text-lg font-extrabold text-white md:text-2xl">
             Computer Science Engineer
           </p>
-          <Paragraph>
-            Hello there! 👋 I'm Balamurugan, a highly skilled front-end
-            developer specializing in React. 🚀 I come from Madurai, India. 🇮🇳 I
-            have a profound passion for web development, which has driven me to
-            continuously seek out opportunities to expand my expertise in this
-            field. 💡
-          </Paragraph>
+          <a
+            href="#about"
+            style={{ textDecoration: 'underline', color: 'blue' }}
+          >
+            About
+          </a>
         </div>
       </div>
     </Container>
