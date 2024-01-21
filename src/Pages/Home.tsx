@@ -4,10 +4,30 @@ import Hero from '../Components/styled/Hero';
 import HomeWrapper from '../Components/styled/HomeWrapper';
 import Paragraph from '../Components/styled/Paragraph';
 import { TitleSmall } from '../Components/styled/Titles';
+import { useTheme } from '../contexts/theme';
 const Home = () => {
+  const theme = useTheme();
+
+  const handleTheme = () => {
+    console.log('ds');
+    theme.toggleTheme();
+    console.log(theme.theme);
+  };
+
   return (
     <HomeWrapper>
-      <Hero>
+      <button
+        style={{
+          position: 'fixed',
+          top: '10px',
+          right: '10px',
+          color: 'white',
+        }}
+        onClick={handleTheme}
+      >
+        {theme.theme == 'light' ? 'dark' : 'light'}
+      </button>
+      <Hero theme={theme.theme}>
         <ProfileDetail />
       </Hero>
       <About style={{ minHeight: '100vh' }}>

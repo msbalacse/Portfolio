@@ -19,7 +19,7 @@ const ProfileDetail = () => {
     <Container>
       <div className="flex flex-wrap gap-4 p-4">
         <img src={ProfilePic} className="w-[250px]" alt="profile picture" />
-        <div>
+        <div className="flex flex-col flex-wrap gap-4">
           <p
             className="text-6xl font-bold min-h-40 md:text-9xl"
             style={{
@@ -27,10 +27,13 @@ const ProfileDetail = () => {
               backgroundImage:
                 'linear-gradient(to right, #611FAD 100%, #7425CF 27%)',
               backgroundClip: 'text',
+              display: 'flex',
+              flexFlow: 'wrap row',
             }}
             ref={nameRef}
           >
-            Bala Murugan
+            <span className="mr-4">Bala</span>
+            <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
           </p>
           <p className="px-2 text-lg font-extrabold text-white md:text-2xl">
             Computer Science Engineer

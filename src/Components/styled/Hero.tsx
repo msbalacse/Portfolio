@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-const Hero = styled.section`
-  background-color: var(--primary-color);
+type Props = {
+  theme: string;
+};
+const Hero = styled.section<Props>`
+  background-color: ${(props) =>
+    props.theme === 'dark' ? 'black' : 'var(--primary-color)'};
   color: white;
   padding: 0.5rem;
   min-height: 100vh;
