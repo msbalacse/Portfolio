@@ -1,27 +1,48 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
 import gsap from 'gsap';
 import Container from './styled/Container';
 const ProfileDetail = () => {
-  const nameRef = useRef(null);
+  const comp = useRef(null);
+  const imgRef = useRef(null);
+  const titleRef = useRef(null);
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {}, nameRef);
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const t1 = gsap.timeline();
+      const t2 = gsap.timeline();
+      t1.from(imgRef.current, {
+        yPercent: -10,
+        duration: 0.6,
+        delay: 0.3,
+      });
+      t2.from(titleRef.current, {
+        xPercent: 30,
+        duration: 0.5,
+        delay: 0.2,
+      });
+    }, []);
 
-    return () => ctx.revert();
+    console.log('t1');
 
-    console.log('useEffect hook');
-
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
     <Container>
-      <div className="flex flex-wrap gap-4 p-4">
-        <img src={ProfilePic} className="w-[250px]" alt="profile picture" />
+      <div className="flex flex-wrap gap-4 p-4" ref={comp}>
+        <img
+          src={ProfilePic}
+          ref={imgRef}
+          className="w-[250px]"
+          alt="profile picture"
+        />
         <div className="flex flex-col flex-wrap gap-4">
           <p
             className="text-6xl font-bold min-h-40 md:text-9xl"
+            ref={titleRef}
             style={{
               color: 'transparent',
               backgroundImage:
@@ -30,7 +51,6 @@ const ProfileDetail = () => {
               display: 'flex',
               flexFlow: 'wrap row',
             }}
-            ref={nameRef}
           >
             <span className="mr-4">Bala</span>
             <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
