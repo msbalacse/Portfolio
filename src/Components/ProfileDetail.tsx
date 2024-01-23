@@ -56,7 +56,7 @@ const ProfileDetail = () => {
             <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
           </p>
           <p className="px-2 text-lg font-extrabold text-white md:text-2xl">
-            Computer Science Engineer
+            Computer Science Engineer | Software Developer
           </p>
           <a
             href="#about"

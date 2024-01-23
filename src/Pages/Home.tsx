@@ -9,9 +9,7 @@ const Home = () => {
   const theme = useTheme();
 
   const handleTheme = () => {
-    console.log('ds');
     theme.toggleTheme();
-    console.log(theme.theme);
   };
 
   return (
