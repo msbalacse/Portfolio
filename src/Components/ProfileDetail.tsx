@@ -10,14 +10,8 @@ const ProfileDetail = () => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       const t1 = gsap.timeline();
-      const t2 = gsap.timeline();
-      t1.from(imgRef.current, {
-        yPercent: -10,
-        duration: 0.6,
-        delay: 0.3,
-      });
-      t2.from(titleRef.current, {
-        xPercent: 30,
+      t1.from(titleRef.current, {
+        xPercent: 5,
         duration: 0.5,
         delay: 0.2,
       });
