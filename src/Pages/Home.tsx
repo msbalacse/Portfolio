@@ -5,7 +5,7 @@ import HomeWrapper from '../Components/styled/HomeWrapper';
 import Paragraph from '../Components/styled/Paragraph';
 import { TitleSmall } from '../Components/styled/Titles';
 import { useTheme } from '../contexts/theme';
-import audio from '../assets/audio/pick.mp3';
+import audio from '../assets/audio/arcade-game-jump-coin.wav';
 const Home = () => {
   const theme = useTheme();
 
