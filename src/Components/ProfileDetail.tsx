@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
 import gsap from 'gsap';
-import Container from './styled/Container';
 const ProfileDetail = () => {
   const comp = useRef(null);
   const imgRef = useRef(null);
@@ -25,8 +24,8 @@ const ProfileDetail = () => {
   }, []);
 
   return (
-    <Container>
-      <div className="flex flex-wrap gap-4 p-4" ref={comp}>
+    <div>
+      <div className="flex flex-wrap gap-4 " ref={comp}>
         <img
           src={ProfilePic}
           ref={imgRef}
@@ -35,7 +34,7 @@ const ProfileDetail = () => {
         />
         <div className="flex flex-col flex-wrap gap-4">
           <p
-            className="text-6xl font-bold min-h-40 md:text-9xl"
+            className="text-3xl font-bold min-h-40 md:text-6xl"
             ref={titleRef}
             style={{
               color: 'transparent',
@@ -46,11 +45,11 @@ const ProfileDetail = () => {
               flexFlow: 'wrap row',
             }}
           >
-            <span className="mr-4">Bala</span>
+            <span className="mt-3 mr-2">Bala</span>
             <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
           </p>
-          <p className="px-2 text-lg font-extrabold text-white md:text-2xl">
-            Computer Science Engineer | Software Developer
+          <p className="font-extrabold tracking-wider text-white text-md md:text-lg">
+            Computer Science Engineer 🔭 | Software Developer 👨‍💻
           </p>
           <a
             href="#about"
@@ -60,7 +59,7 @@ const ProfileDetail = () => {
           </a>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

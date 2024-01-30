@@ -6,6 +6,7 @@ import Paragraph from '../Components/styled/Paragraph';
 import { TitleSmall } from '../Components/styled/Titles';
 import { useTheme } from '../contexts/theme';
 import audio from '../assets/audio/arcade-game-jump-coin.wav';
+import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
 const Home = () => {
   const theme = useTheme();
 
@@ -27,7 +28,11 @@ const Home = () => {
         }}
         onClick={handleTheme}
       >
-        {theme.theme == 'light' ? 'dark' : 'light'}
+        {theme.theme == 'light' ? (
+          <MdDarkMode size={'24px'} />
+        ) : (
+          <MdOutlineDarkMode size={'24px'} />
+        )}
       </button>
       <Hero theme={theme.theme}>
         <ProfileDetail />
