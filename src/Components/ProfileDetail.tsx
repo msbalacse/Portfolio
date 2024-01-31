@@ -1,6 +1,8 @@
 import { useLayoutEffect, useRef } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
 import gsap from 'gsap';
+import { TitleLarge } from './styled/Titles';
+import Paragraph from './styled/Paragraph';
 const ProfileDetail = () => {
   const comp = useRef(null);
   const imgRef = useRef(null);
@@ -59,6 +61,11 @@ const ProfileDetail = () => {
           </a>
         </div>
       </div>
+      <TitleLarge>Who Am I?</TitleLarge>
+      <Paragraph>
+        Hello! I am Balamurugan, a front-end developer and passionate React
+        enthusiast from the vibrant city of Madurai, Tamilnadu.
+      </Paragraph>
     </div>
   );
 };

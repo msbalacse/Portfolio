@@ -40,10 +40,6 @@ const Home = () => {
       <About style={{ minHeight: '100vh' }}>
         <TitleSmall id="about">About</TitleSmall>
         <Paragraph>
-          Hello! I am Balamurugan, a front-end developer and passionate React
-          enthusiast from the vibrant city of Madurai, Tamilnadu.
-        </Paragraph>
-        <Paragraph>
           As a lifelong learner, my love for web development has driven me to
           explore a multitude of learning resources. I've dedicated countless
           hours to studying diverse video tutorials, meticulously examining
