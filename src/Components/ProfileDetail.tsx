@@ -32,7 +32,10 @@ const ProfileDetail = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-2 " ref={comp}>
+      <div
+        className="grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-y-8 "
+        ref={comp}
+      >
         <img
           src={ProfilePic}
           ref={imgRef}
