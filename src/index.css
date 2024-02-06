@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Cabin', sans-serif;
+  --font: 'Cabin', sans-serif;
   --primary-color: #f4ce14;
   --secondary-color: #393ee8;
   --highlight-color: #45474b;
@@ -13,6 +13,20 @@
 
   --black: #000;
   --white: #fff;
+
+  --border-radius: 1rem;
+  --padding: 1.5rem;
+  --max-width-wrapper: 1600px;
+  --display-heading: 2.25rem;
+  --large-heading: 1.8rem;
+  --small-heading: 1.3rem;
+  --large-paragraph: 1.125rem;
+  --medium-paragraph: 1rem;
+  --small-paragraph: 0.8rem;
+  --overline: 0.7rem;
+  --footnote: 0.7rem;
+  --gradient-start: rgba(239, 0, 215, 1);
+  --gradient-end: rgba(72, 0, 236, 1);
 }
 
 * {
@@ -25,6 +39,9 @@
 
 body {
   background-color: var(--white);
+  font-family: var(--font);
+  max-width: 1020px;
+  margin: 0 auto;
 }
 
 ::-webkit-scrollbar,
@@ -36,6 +53,6 @@ scrollbar {
 ::-webkit-scrollbar-thumb,
 scrollbar-thumb {
   background-color: var(--primary-color);
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   height: 30px;
 }

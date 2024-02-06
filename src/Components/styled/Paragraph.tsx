@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
-const Paragraph = styled.p`
+type Props = {
+  theme: string;
+};
+
+const Paragraph = styled.p<Props>`
   display: flex;
-  color: black;
+  color: ${(props) => (props.theme === 'light' ? 'black' : 'white')};
   line-height: 1.5em;
-  padding: 1rem;
+  padding: 0.5rem 0;
   font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
   @media screen and (max-width: 600px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 
