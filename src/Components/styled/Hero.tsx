@@ -7,8 +7,7 @@ type Props = {
 const Hero = styled.section<Props>`
   background-color: ${(props) => (props.theme === 'dark' ? 'black' : 'white')};
   color: white;
-  padding: 0.5rem;
-  min-height: 100vh;
+  padding: 2rem 0.5rem;
 `;
 
 export default Hero;

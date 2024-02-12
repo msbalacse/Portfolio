@@ -4,6 +4,7 @@ import HomeWrapper from '../Components/styled/HomeWrapper';
 import { useTheme } from '../contexts/theme';
 import audio from '../assets/audio/arcade-game-jump-coin.wav';
 import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
+import About from '../Components/About';
 const Home = () => {
   const theme = useTheme();
 
@@ -36,6 +37,7 @@ const Home = () => {
       <Hero theme={theme.theme}>
         <ProfileDetail />
       </Hero>
+      <About />
     </HomeWrapper>
   );
 };

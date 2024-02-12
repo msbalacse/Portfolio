@@ -4,10 +4,10 @@ type Props = {
   theme: string;
 };
 
-const TitleSmall = styled.h1`
-  font-size: 2rem;
-  font-weight: bolder;
-  color: black;
+const TitleSmall = styled.h1<Props>`
+  font-size: 3rem;
+  color: ${(props) =>
+    props.theme === 'light' ? 'var(--primary-color)' : 'white'};
 `;
 
 const TitleLarge = styled.h1<Props>`

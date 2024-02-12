@@ -1,8 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
 import gsap from 'gsap';
-import { TitleLarge } from './styled/Titles';
-import Paragraph from './styled/Paragraph';
 import { useTheme } from '../contexts/theme';
 const ProfileDetail = () => {
   const comp = useRef(null);
@@ -63,29 +61,6 @@ const ProfileDetail = () => {
           >
             Computer Science Engineer 🔭 | Software Developer 👨‍💻
           </p>
-        </div>
-        <TitleLarge className="col-span-2 justify-self-start" theme={theme}>
-          Who Am I?
-        </TitleLarge>
-        <div className="col-span-3 md:pt-[1rem]">
-          <Paragraph theme={theme}>
-            Hello! I am Balamurugan, a front-end developer and passionate React
-            enthusiast from the vibrant city of Madurai, Tamilnadu.
-          </Paragraph>
-          <Paragraph theme={theme}>
-            As a lifelong learner, my love for web development has driven me to
-            explore a multitude of learning resources. I've dedicated countless
-            hours to studying diverse video tutorials, meticulously examining
-            documentation, and devouring articles on the latest web
-            technologies. This dedication has formed a solid foundation for my
-            expertise in front-end development and React.
-          </Paragraph>
-          <Paragraph theme={theme}>
-            From my early days, I've been captivated by computers and
-            technology, and this fascination has only grown stronger with time.
-            It fuels my insatiable desire to continually expand my knowledge and
-            skills in the dynamic world of web development.
-          </Paragraph>
         </div>
       </div>
     </div>
