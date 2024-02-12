@@ -9,9 +9,9 @@ const About = () => {
     <section
       className={`${
         theme === 'dark' ? 'bg-black' : 'bg-white'
-      } grid grid-cols-4`}
+      } grid grid-cols-1 md:grid-cols-4 p-2`}
     >
-      <TitleSmall className=" justify-self-center" theme={theme}>
+      <TitleSmall className=" justify-self-start" theme={theme}>
         Who Am I?
       </TitleSmall>
       <div className="col-span-3 md:pt-[1rem]">
