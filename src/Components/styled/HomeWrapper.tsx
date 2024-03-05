@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-const HomeWrapper = styled.section`
-  background-color: white;
+interface HomeWrapperTypes {
+  backgroundColor: string;
+}
+
+const HomeWrapper = styled.section<HomeWrapperTypes>`
+  background-color: ${(p) => p.backgroundColor};
   min-height: 100vh;
   position: relative;
   margin-top: 3rem;

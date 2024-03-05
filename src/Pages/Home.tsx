@@ -5,6 +5,7 @@ import { useTheme } from '../contexts/theme';
 import audio from '../assets/audio/arcade-game-jump-coin.wav';
 import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
 import About from '../Components/About';
+import Button from '../Components/ui/Button';
 const Home = () => {
   const theme = useTheme();
 
@@ -15,17 +16,13 @@ const Home = () => {
     sound.play();
     document.body.style.background =
       theme.theme === 'light' ? 'black' : 'white';
+    console.log('body log');
   };
 
   return (
-    <HomeWrapper>
-      <button
-        style={{
-          position: 'fixed',
-          top: '10px',
-          right: '10px',
-          color: 'white',
-        }}
+    <HomeWrapper backgroundColor={theme.theme}>
+      <Button
+        classNames={`fixed top-[15px] right-[15px] text-white`}
         onClick={handleTheme}
       >
         {theme.theme == 'light' ? (
@@ -33,7 +30,7 @@ const Home = () => {
         ) : (
           <MdOutlineDarkMode size={'24px'} color="var(--primary-color)" />
         )}
-      </button>
+      </Button>
       <Hero theme={theme.theme}>
         <ProfileDetail />
       </Hero>
