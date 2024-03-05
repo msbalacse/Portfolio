@@ -3,9 +3,12 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      fontFamily:{
-        Inter : 'Inter, sans-serif'
-      }
+      fontFamily: {
+        Inter: 'Inter, sans-serif',
+      },
+      backgroundImage: {
+        'gradient-primary': "url('srcassetsimagesEllipse-primary.png')",
+      },
     },
   },
   plugins: [],

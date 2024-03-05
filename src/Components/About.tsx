@@ -9,7 +9,7 @@ const About = () => {
     <section
       className={`${
         theme === 'dark' ? 'bg-black' : 'bg-white'
-      } grid grid-cols-1 md:grid-cols-4 p-2`}
+      } grid grid-cols-1 md:grid-cols-4 p-2 bg-gradient-primary`}
     >
       <TitleSmall className=" justify-self-start" theme={theme}>
         Who Am I?

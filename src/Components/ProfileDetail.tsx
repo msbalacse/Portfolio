@@ -1,7 +1,10 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
 import gsap from 'gsap';
 import { useTheme } from '../contexts/theme';
+import TextAnimation from './ui/TextAnimation';
+import { txtanimation } from '../data/txtanimation';
+
 const ProfileDetail = () => {
   const comp = useRef(null);
   const imgRef = useRef(null);
@@ -28,19 +31,23 @@ const ProfileDetail = () => {
     };
   }, []);
 
+  useEffect(() => {
+    console.log('updating ' + textColor);
+  }, [textColor]);
+
   return (
     <div>
       <div
-        className="grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-y-8 "
+        className="grid grid-cols-1 gap-2 md:grid-cols-5 md:gap-y-8 "
         ref={comp}
       >
         <img
           src={ProfilePic}
           ref={imgRef}
           className="w-[250px] justify-self-start"
-          alt="profile picture"
+          alt="profile-pic"
         />
-        <div className="col-span-4 flex flex-col flex-wrap gap-4">
+        <div className="flex flex-col flex-wrap col-span-4 gap-4">
           <p
             className="text-3xl font-bold min-h-40 md:text-6xl"
             ref={titleRef}
@@ -56,11 +63,7 @@ const ProfileDetail = () => {
             <span className="mt-3 mr-2">Bala</span>
             <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
           </p>
-          <p
-            className={`font-extrabold tracking-wider ${textColor} text-md md:text-lg`}
-          >
-            Computer Science Engineer 🔭 | Software Developer 👨‍💻
-          </p>
+          <TextAnimation arr={txtanimation} theme={theme} />
         </div>
       </div>
     </div>
