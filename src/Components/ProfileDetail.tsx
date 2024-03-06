@@ -1,6 +1,5 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
-import ProfilePic from '../assets/images/ProfilePic.jpg';
-import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import ProfilePic from '../assets/images/ProfilePic.webp';
 import { useTheme } from '../contexts/theme';
 import TextAnimation from './ui/TextAnimation';
 import { txtanimation } from '../data/txtanimation';
@@ -13,23 +12,6 @@ const ProfileDetail = () => {
   const theme = useTheme().theme;
 
   const textColor = theme === 'light' ? 'text-black' : 'text-white';
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      const t1 = gsap.timeline();
-      t1.from(titleRef.current, {
-        xPercent: 5,
-        duration: 0.5,
-        delay: 0.2,
-      });
-    }, []);
-
-    console.log('t1');
-
-    return () => {
-      ctx.revert();
-    };
-  }, []);
 
   useEffect(() => {
     console.log('updating ' + textColor);
