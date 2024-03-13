@@ -7,7 +7,7 @@ type FadeToLeftProps = {
 };
 
 const FadeToLeft: React.FC<FadeToLeftProps> = ({ children }) => {
-  const container = useRef();
+  const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
