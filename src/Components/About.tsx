@@ -9,12 +9,16 @@ const About = () => {
     <section
       className={`${
         theme === 'dark' ? 'bg-black' : 'bg-white'
-      } grid grid-cols-1 md:grid-cols-4 p-2 bg-gradient-primary`}
+      } grid grid-cols-1 md:grid-cols-4 gap-4 p-2 bg-gradient-primary`}
     >
       <TitleSmall className=" justify-self-start" theme={theme}>
         Who Am I?
       </TitleSmall>
-      <div className="col-span-3 md:pt-[1rem]">
+      <div
+        className={`col-span-3 md:mt-10 md:pt-[1rem] border-t ${
+          theme === 'dark' ? 'border-[#f4ce14]' : 'border-black'
+        } `}
+      >
         <Paragraph theme={theme}>
           Hello! I am Balamurugan, a front-end developer and passionate React
           enthusiast from the vibrant city of Madurai, Tamilnadu.

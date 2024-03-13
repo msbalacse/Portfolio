@@ -3,6 +3,9 @@ import ProfilePic from '../assets/images/ProfilePic.webp';
 import { useTheme } from '../contexts/theme';
 import TextAnimation from './ui/TextAnimation';
 import { txtanimation } from '../data/txtanimation';
+import FadeToLeft from './Animation/FadeToLeft';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const ProfileDetail = () => {
   const comp = useRef(null);
@@ -17,34 +20,41 @@ const ProfileDetail = () => {
     console.log('updating ' + textColor);
   }, [textColor]);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      imgRef.current,
+      { scale: 0.5, opacity: 0, ease: 'elastic.inOut' },
+      { scale: 1, opacity: 1, duration: 0.8 }
+    );
+  });
+
   return (
     <div>
-      <div
-        className="grid grid-cols-1 gap-2 md:grid-cols-5 md:gap-y-8 "
-        ref={comp}
-      >
+      <div className="flex flex-wrap gap-8" ref={comp}>
         <img
           src={ProfilePic}
           ref={imgRef}
-          className="w-[250px] justify-self-start"
+          className="w-[250px] rounded-sm justify-self-start"
           alt="profile-pic"
         />
-        <div className="flex flex-col flex-wrap col-span-4 gap-4">
-          <p
-            className="text-3xl font-bold min-h-40 md:text-6xl"
-            ref={titleRef}
-            style={{
-              color: 'transparent',
-              backgroundImage:
-                'linear-gradient(to right, #611FAD 100%, #7425CF 27%)',
-              backgroundClip: 'text',
-              display: 'flex',
-              flexFlow: 'wrap row',
-            }}
-          >
-            <span className="mt-3 mr-2">Bala</span>
-            <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
-          </p>
+        <div className="flex flex-col flex-wrap gap-4">
+          <FadeToLeft>
+            <p
+              className="text-3xl font-bold min-h-40 md:text-6xl"
+              ref={titleRef}
+              style={{
+                color: 'transparent',
+                backgroundImage:
+                  'linear-gradient(to right, #611FAD 100%, #7425CF 27%)',
+                backgroundClip: 'text',
+                display: 'flex',
+                flexFlow: 'wrap row',
+              }}
+            >
+              <span className="mt-3 mr-2">Bala</span>
+              <span className="bg-[#611FAD] text-white my-2">Murugan.</span>
+            </p>
+          </FadeToLeft>
           <TextAnimation arr={txtanimation} theme={theme} />
         </div>
       </div>
