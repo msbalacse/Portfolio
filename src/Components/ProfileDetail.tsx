@@ -23,7 +23,7 @@ const ProfileDetail = () => {
   useGSAP(() => {
     gsap.fromTo(
       imgRef.current,
-      { scale: 0.5, opacity: 0, ease: 'elastic.inOut' },
+      { scale: 0.8, opacity: 0, ease: 'power1.inOut' },
       { scale: 1, opacity: 1, duration: 0.8 }
     );
   });
