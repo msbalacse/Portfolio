@@ -1,10 +1,7 @@
-import ProfileDetail from '../Components/ProfileDetail';
-import Hero from '../Components/styled/Hero';
 import HomeWrapper from '../Components/styled/HomeWrapper';
 import { useTheme } from '../contexts/theme';
 import audio from '../assets/audio/arcade-game-jump-coin.wav';
 import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
-import About from '../Components/About';
 import Button from '../Components/ui/Button';
 const Home = () => {
   const theme = useTheme();
