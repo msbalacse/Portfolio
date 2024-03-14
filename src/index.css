@@ -38,7 +38,7 @@
 }
 
 body {
-  background-color: var(--white);
+  background-color: #fffce1;
   font-family: var(--font);
   max-width: 1020px;
   margin: 0 auto;

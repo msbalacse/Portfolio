@@ -31,10 +31,7 @@ const Home = () => {
           <MdOutlineDarkMode size={'24px'} color="var(--primary-color)" />
         )}
       </Button>
-      <Hero theme={theme.theme}>
-        <ProfileDetail />
-      </Hero>
-      <About />
+      Test Web
     </HomeWrapper>
   );
 };
