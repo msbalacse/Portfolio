@@ -1,34 +1,31 @@
 import HomeWrapper from '../Components/styled/HomeWrapper';
 import { useTheme } from '../contexts/theme';
-import audio from '../assets/audio/arcade-game-jump-coin.wav';
-import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
-import Button from '../Components/ui/Button';
+import Navbar from '../Components/Navbar';
 const Home = () => {
   const theme = useTheme();
 
-  const sound = new Audio(audio);
-
-  const handleTheme = () => {
-    theme.toggleTheme();
-    sound.play();
-    document.body.style.background =
-      theme.theme === 'light' ? 'black' : 'white';
-    console.log('body log');
-  };
-
   return (
     <HomeWrapper backgroundColor={theme.theme}>
-      <Button
-        classNames={`fixed top-[15px] right-[15px] text-white`}
-        onClick={handleTheme}
-      >
-        {theme.theme == 'light' ? (
-          <MdDarkMode size={'24px'} color="var(--primary-color)" />
-        ) : (
-          <MdOutlineDarkMode size={'24px'} color="var(--primary-color)" />
-        )}
-      </Button>
-      Test Web
+      <Navbar />
+      <p>
+        Hello! I am Balamurugan, a front-end developer and passionate React
+        enthusiast from the vibrant city of Madurai, Tamilnadu. As a lifelong
+        learner, my love for web development has driven me to explore a
+        multitude of learning resources. I've dedicated countless hours to
+        studying diverse video tutorials, meticulously examining documentation,
+        and devouring articles on the latest web technologies.
+      </p>
+      <p>
+        This dedication has formed a solid foundation for my expertise in
+        front-end development and React. From my early days, I've been
+        captivated by computers and technology, and this fascination has only
+        grown stronger with time. It fuels my insatiable desire to continually
+        expand my knowledge and skills in the dynamic world of web development.
+        One of the most fulfilling aspects of being a developer is the joy of
+        crafting something unique and impactful. I take great pleasure in
+        sharing my work with the global developer community on platforms like
+        GitHub.
+      </p>
     </HomeWrapper>
   );
 };
