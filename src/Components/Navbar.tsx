@@ -1,4 +1,4 @@
-import { AppBar, Button, Container, Typography } from '@mui/material';
+import { AppBar, Button, Container } from '@mui/material';
 import { useTheme } from '../contexts/theme';
 import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
 import audio from '../assets/audio/arcade-game-jump-coin.wav';
